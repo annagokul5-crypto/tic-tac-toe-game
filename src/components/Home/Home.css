@@ -1,0 +1,228 @@
+.home {
+  text-align: center;
+  max-width: 420px;
+  width: 100%;
+}
+
+/* Title with subtle fade-in slide */
+.home__title {
+  font-size: clamp(2rem, 6vw, 2.75rem);
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 0.5rem;
+  animation: homeTitleIn 0.4s ease forwards;
+  opacity: 0;
+  transform: translateY(-12px);
+}
+
+.home__subtitle {
+  font-size: 1rem;
+  color: var(--color-o);
+  margin-bottom: 2rem;
+  animation: homeSubtitleIn 0.4s ease 0.1s forwards;
+  opacity: 0;
+  transform: translateY(-8px);
+}
+
+@keyframes homeTitleIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes homeSubtitleIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.home__play-btn {
+  display: inline-block;
+  padding: 0.875rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-bg);
+  background: var(--color-x);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-subtle);
+  transition: transform var(--transition-soft), box-shadow var(--transition-soft);
+  animation: homePlayIn 0.4s ease 0.2s forwards;
+  opacity: 0;
+  transform: translateY(-8px);
+}
+
+.home__play-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(34, 211, 238, 0.35);
+}
+
+@keyframes homePlayIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mode selection (on click) */
+.home__modes {
+  animation: homeModesIn 0.25s ease forwards;
+}
+
+@keyframes homeModesIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.home__modes-label {
+  font-size: 1.5rem;
+  color: var(--color-x);
+  margin-bottom: 1rem;
+}
+
+.home__mode-btn {
+  display: block;
+  width: 100%;
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-text);
+  background: var(--color-board);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius);
+  margin-bottom: 0.75rem;
+  transition: border-color var(--transition-soft), background var(--transition-soft);
+}
+
+.home__mode-btn:hover {
+  border-color: var(--color-x);
+  background: rgba(34, 211, 238, 0.08);
+}
+
+/* Overlay + card for player setup */
+.home__overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  z-index: 10;
+  animation: overlayIn 0.2s ease forwards;
+}
+
+@keyframes overlayIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.home__card {
+  background: var(--color-board);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-subtle);
+  padding: 1.5rem;
+  max-width: 360px;
+  width: 100%;
+  animation: cardSlideIn 0.25s ease forwards;
+}
+
+@keyframes cardSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.home__card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.home__card-hint {
+  font-size: 0.85rem;
+  color: var(--color-o);
+  margin-bottom: 1.25rem;
+}
+
+.home__label {
+  display: block;
+  text-align: left;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: var(--color-text);
+}
+
+.home__input {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  font-size: 1rem;
+  color: var(--color-text);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  transition: border-color var(--transition-soft);
+}
+
+.home__input:focus {
+  outline: none;
+  border-color: var(--color-x);
+}
+
+.home__input::placeholder {
+  color: var(--color-border);
+}
+
+.home__card-actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+.home__btn {
+  flex: 1;
+  padding: 0.6rem 1rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: opacity var(--transition-soft), transform var(--transition-soft);
+}
+
+.home__btn--secondary {
+  color: var(--color-text);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+}
+
+.home__btn--secondary:hover {
+  border-color: var(--color-text);
+}
+
+.home__btn--primary {
+  color: var(--color-bg);
+  background: var(--color-x);
+}
+
+.home__btn--primary:hover {
+  opacity: 0.95;
+  transform: translateY(-1px);
+}

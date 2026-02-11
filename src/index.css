@@ -1,0 +1,49 @@
+/* ===== CSS Variables (Theme) ===== */
+:root {
+  --color-bg: #0F172A;
+  --color-board: #1E293B;
+  --color-text: #E5E7EB;
+  --color-border: #334155;
+  --color-x: #22D3EE;
+  --color-o: #A78BFA;
+  --color-win: #6EE7B7;
+  --transition-soft: 200ms ease;
+  --shadow-subtle: 0 4px 12px rgba(0, 0, 0, 0.25);
+  --radius: 12px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+input {
+  font-family: inherit;
+}

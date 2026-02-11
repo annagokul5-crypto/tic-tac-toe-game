@@ -1,0 +1,46 @@
+/* Classic grid cell — no card style; continuous lines via board grid */
+.cell {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-board);
+  font-size: clamp(2rem, 8vw, 3.5rem);
+  font-weight: 700;
+  transition: border-color var(--transition-soft), background var(--transition-soft), color var(--transition-soft);
+}
+
+.cell:hover:not(:disabled) {
+  outline: 2px solid var(--color-x);
+  outline-offset: -2px;
+}
+
+.cell:focus {
+  outline: 2px solid var(--color-border);
+  outline-offset: -2px;
+}
+
+.cell:disabled {
+  cursor: default;
+}
+
+.cell--x .cell__symbol {
+  color: var(--color-x);
+}
+
+.cell--o .cell__symbol {
+  color: var(--color-o);
+}
+
+.cell--win {
+  background: rgba(110, 231, 183, 0.15);
+  border-color: var(--color-win);
+}
+
+.cell--win .cell__symbol {
+  color: var(--color-win);
+}
+
+.cell__symbol {
+  line-height: 1;
+}

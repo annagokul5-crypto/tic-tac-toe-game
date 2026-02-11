@@ -1,0 +1,32 @@
+/* Classic Tic Tac Toe grid: continuous lines, no gaps (single line between cells) */
+.board {
+  --size: 3;
+  display: grid;
+  grid-template-columns: repeat(var(--size), 1fr);
+  grid-template-rows: repeat(var(--size), 1fr);
+  gap: 0;
+  max-width: min(320px, 90vw);
+  width: 100%;
+  min-height: min(320px, 90vw);
+  aspect-ratio: 1;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-subtle);
+  background: var(--color-board);
+}
+
+.board .cell {
+  border-radius: 0;
+  border-width: 0;
+  border-right: 2px solid var(--color-border);
+  border-bottom: 2px solid var(--color-border);
+}
+
+.board .cell:nth-child(3n) { border-right: 0; }
+.board .cell:nth-child(n + 7) { border-bottom: 0; }
+
+.board .cell:nth-child(1) { border-radius: var(--radius) 0 0 0; }
+.board .cell:nth-child(3) { border-radius: 0 var(--radius) 0 0; }
+.board .cell:nth-child(7) { border-radius: 0 0 0 var(--radius); }
+.board .cell:nth-child(9) { border-radius: 0 0 var(--radius) 0; }

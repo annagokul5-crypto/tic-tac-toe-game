@@ -1,0 +1,187 @@
+.game {
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 0;
+  position: relative;
+}
+
+.game__back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0.5rem;
+  color: var(--color-text);
+  opacity: 0.85;
+  transition: opacity var(--transition-soft), color var(--transition-soft);
+}
+
+.game__back:hover {
+  opacity: 1;
+  color: var(--color-o);
+}
+
+/* Score panel */
+.game__scores {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 0.75rem;
+  width: 100%;
+  margin-bottom: 1.25rem;
+  padding: 0.75rem 1rem;
+  background: var(--color-board);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-subtle);
+}
+
+.game__score {
+  text-align: center;
+}
+
+.game__score--p1 .game__score-value { color: var(--color-x); }
+.game__score--p2 .game__score-value { color: var(--color-x); }
+.game__score--draw .game__score-value { color: var(--color-text); }
+
+.game__score-label {
+  display: block;
+  font-size: 1 rem;
+  color: var(--color-o);
+  margin-bottom: 0.25rem;
+}
+
+.game__score-value {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+/* Current turn */
+.game__turn {
+  font-size: 0.95rem;
+  color: var(--color-text);
+  margin-bottom: 1rem;
+}
+
+.game__turn strong {
+  color: var(--color-x);
+}
+
+.game__board-wrap {
+  margin-bottom: 1rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Game end overlay */
+.game__overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  z-index: 20;
+  animation: gameOverlayIn 0.25s ease forwards;
+}
+
+@keyframes gameOverlayIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.game__result {
+  background: var(--color-board);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-subtle);
+  padding: 1.5rem 2rem;
+  text-align: center;
+  animation: gameResultSlide 0.25s ease forwards;
+}
+
+@keyframes gameResultSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.game__result-emoji {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.game__result-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 0.75rem;
+}
+
+.game__result-draw-label {
+  font-size: 1rem;
+  color: var(--color-text);
+  margin-bottom: 1rem;
+}
+
+.game__play-again {
+  display: inline-block;
+  padding: 0.6rem 1.25rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-bg);
+  background: var(--color-x);
+  border-radius: 8px;
+  transition: opacity var(--transition-soft), transform var(--transition-soft);
+}
+
+.game__play-again:hover {
+  opacity: 0.95;
+  transform: translateY(-1px);
+}
+
+/* Container must be relative so the absolute button positions relative to IT, not the body */
+.game {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* Add other styles you already have */
+}
+
+/* The Exit Button Style */
+.game__exit-button {
+    position: absolute; /* Takes it out of the normal flow */
+    top: 20px;          /* Distance from top */
+    left: 20px;         /* Distance from left */
+
+    background: transparent;
+    border: none;
+    color: #fff; /* or your theme text color */
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    transition: background 0.2s;
+    z-index: 10; /* Ensures it sits above other elements */
+}
+
+.game__exit-button:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
